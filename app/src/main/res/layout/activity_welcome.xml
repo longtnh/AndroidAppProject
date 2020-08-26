@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".WelcomeActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="219dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/moneyConvert1"
+            android:layout_width="349dp"
+            android:layout_height="221dp"
+            android:layout_weight="0.5"
+            android:src="@drawable/money_convert" />
+
+        <ImageView
+            android:id="@+id/weather1"
+            android:layout_width="349dp"
+            android:layout_height="221dp"
+            android:layout_weight="0.5"
+            android:src="@drawable/weather_forecasr" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="219dp"
+        android:orientation="horizontal"
+        android:textAlignment="textStart">
+
+        <ImageView
+            android:id="@+id/compass1"
+            android:layout_width="349dp"
+            android:layout_height="221dp"
+            android:layout_weight="0.5"
+            android:src="@drawable/compass_image" />
+
+        <ImageView
+            android:id="@+id/note"
+            android:layout_width="349dp"
+            android:layout_height="221dp"
+            android:layout_weight="0.5"
+            android:src="@drawable/note" />
+    </LinearLayout>
+</LinearLayout>
