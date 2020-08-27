@@ -16,6 +16,8 @@ import com.example.apiconversion.Retrofit.RetrofitInterface;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
 
+import java.text.DecimalFormat;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -64,7 +66,8 @@ public class MainActivity extends AppCompatActivity {
                             double currency = Double.valueOf(currencyToBeConverted.getText().toString());
                             double multiplier = Double.valueOf(rates.get(convertToDropdown.getSelectedItem().toString()).toString());
                             double result = currency * multiplier;
-                            currencyConverted.setText(String.valueOf(result));
+                            DecimalFormat numberFormat = new DecimalFormat("#.000");
+                            currencyConverted.setText(String.valueOf(numberFormat.format(result)));
                             date.append(dateUpdate.toString());
 
                         }
