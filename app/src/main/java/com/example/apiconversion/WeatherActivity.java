@@ -67,10 +67,10 @@ public class WeatherActivity extends AppCompatActivity {
                 Picasso.get().load(new StringBuilder("https://openweathermap.org/img/w/")
                         .append(response.body().getWeather().get(0).getIcon())
                         .append(".png").toString()).into(img_weather);
-                tempText.append(response.body().getMain().getTemp() + "\u2103");
-                descText.append(response.body().getMain().getFeels_like());
-                humidityText.append(response.body().getMain().getHumidity());
-                weatherText.append(response.body().getWeather().get(0).getMain());
+                tempText.setText(response.body().getMain().getTemp() + "\u2103");
+                descText.setText("Feels Like : " + response.body().getMain().getFeels_like());
+                humidityText.setText("Humidity : " + response.body().getMain().getHumidity());
+                weatherText.setText("Weather : " + response.body().getWeather().get(0).getMain());
             }
 
                 @Override
