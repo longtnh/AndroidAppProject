@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".EditNoteActivity"></activity>
+        <activity android:name=".ChooseCityActivity"></activity>
+        <activity android:name=".EditNoteActivity" />
         <activity android:name=".AddNoteActivity" />
         <activity
             android:name=".NoteActivity"

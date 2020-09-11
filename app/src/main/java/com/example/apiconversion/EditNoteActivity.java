@@ -1,5 +1,6 @@
 package com.example.apiconversion;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -27,6 +28,10 @@ public class EditNoteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_note);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Edit Note");
+        actionBar.setDisplayShowHomeEnabled(true);
+
 
         helper = new DatabaseHelper(this);
 

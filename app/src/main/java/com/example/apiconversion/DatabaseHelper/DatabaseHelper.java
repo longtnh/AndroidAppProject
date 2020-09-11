@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import com.example.apiconversion.Note;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String database_name = "db_note";

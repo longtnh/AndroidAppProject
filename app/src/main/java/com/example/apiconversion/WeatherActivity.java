@@ -2,6 +2,7 @@ package com.example.apiconversion;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -27,6 +28,7 @@ public class WeatherActivity extends AppCompatActivity {
     TextView tempText , descText , humidityText, weatherText;
     EditText textField;
     ImageView img_weather;
+    String city;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,17 +44,22 @@ public class WeatherActivity extends AppCompatActivity {
         weatherText = (TextView) findViewById(R.id.textWeather);
         img_weather = (ImageView) findViewById(R.id.img_weather);
 
-        search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (textField.getText().toString().equals("")) {
-                    Toast.makeText(getApplicationContext(), "Input something !!", Toast.LENGTH_LONG).show();
-                }
-                else {
-                    getWeatherData(textField.getText().toString().trim());
-                }
-            }
-        });
+        Intent intent = getIntent();
+        city = intent.getStringExtra("name");
+
+        textField.setText(city);
+//        search.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if (textField.getText().toString().equals("")) {
+//                    Toast.makeText(getApplicationContext(), "Input something !!", Toast.LENGTH_LONG).show();
+//                }
+//                else {
+//                    getWeatherData(textField.getText().toString().trim());
+//                }
+//            }
+//        });
+        getWeatherData(city);
     }
 
     private void getWeatherData(String name){

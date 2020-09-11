@@ -1,5 +1,6 @@
 package com.example.apiconversion;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.hardware.Sensor;
@@ -22,7 +23,10 @@ public class CompassActivity extends AppCompatActivity implements SensorEventLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compass);
-        setTitle("Compass");
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Compass");
+        actionBar.setDisplayShowHomeEnabled(true);
+
         // our compass image
         image = (ImageView) findViewById(R.id.imageViewCompass);
 

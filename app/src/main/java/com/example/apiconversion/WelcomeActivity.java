@@ -10,6 +10,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.example.apiconversion.Retrofit.Weather;
+
 public class WelcomeActivity extends AppCompatActivity {
     static final int REQUEST = 8888;
     ImageView imgCurrency,imgWeather,imgCompass,imgNote;
@@ -33,7 +35,7 @@ public class WelcomeActivity extends AppCompatActivity {
         imgWeather.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(WelcomeActivity.this, WeatherActivity.class);
+                Intent intent = new Intent(WelcomeActivity.this, ChooseCityActivity.class);
                 startActivityForResult(intent, REQUEST);
             }
         });

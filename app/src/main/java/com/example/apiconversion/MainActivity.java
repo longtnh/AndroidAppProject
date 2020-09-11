@@ -1,5 +1,6 @@
 package com.example.apiconversion;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -34,7 +35,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setTitle("Currency Converted");
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Concurrency Converter");
+        actionBar.setDisplayShowHomeEnabled(true);
+
 
         currencyConverted = (EditText) findViewById(R.id.currency_converted);
         currencyToBeConverted = (EditText) findViewById(R.id.currency_to_be_converted);
@@ -43,7 +47,9 @@ public class MainActivity extends AppCompatActivity {
         button = (Button) findViewById(R.id.button);
         date = (TextView) findViewById(R.id.date);
 
-        String[] dropDownList = {"USD","AED","ARS","AUD","BGN","BRL","BSD","CAD","CHF","CLP","CNY","CZK","DKK","DOP","EUR","FJD","GBP"};
+        String[] dropDownList = {"USD","AED","ARS","AUD","BGN","BRL","BSD","CAD","CHF","CLP","CNY","CZK","DKK","DOP","EUR","FJD","GBP"
+                ,"GTQ","HKD","HRK","HUF","IDR","ILS","INR","ISK","JPY","KRW","KZT","MVR","MXN","MYR","NOK","NZD","PAB","PEN","PHP","PKR"
+                ,"PLN","PYG","RON","RUB","SAR","SEK","SGD","THB","TRY","TWD","UAH","UYU","ZAR"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, dropDownList);
         convertToDropdown.setAdapter(adapter);
         convertFromDropdown.setAdapter(adapter);
@@ -68,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                             double result = currency * multiplier;
                             DecimalFormat numberFormat = new DecimalFormat("#.000");
                             currencyConverted.setText(String.valueOf(numberFormat.format(result)));
-                            date.append(dateUpdate.toString());
+                            date.setText("Date Update : " + dateUpdate.toString());
 
                         }
 
